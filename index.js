@@ -16,10 +16,11 @@ const bootstrap = async () => {
         await mongoose.connect('mongodb://admin:admin1@ds257698.mlab.com:57698/doan2019');
 
         // use middlewares + routers
-        app.use(cors({
-            origin: ['http://localhost:3000', 'http://localhost:3001'],
-            credentials: true,
-        }));
+        // app.use(cors({
+        //     origin: ['http://localhost:3000', 'http://localhost:3001', 'https://fileupload-back-end.herokuapp.com', 'https://notarized.herokuapp.com'],
+        //     credentials: true,
+        // }));
+        app.use(cors())
         app.use(expressSession({
             secret: 'cobaudeptrai',
             resave: false,
