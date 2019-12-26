@@ -17,7 +17,7 @@ const bootstrap = async () => {
 
         // use middlewares + routers
         app.use(cors({
-            origin: ['http://localhost:3000','http://localhost:3002', 'http://localhost:3001', 'https://fileupload-back-end.herokuapp.com', 'https://notarized.herokuapp.com'],
+            origin: ['http://localhost:3000','http://localhost:3002', 'http://localhost:3001', 'https://fileupload-back-end.herokuapp.com', 'https://notarized-file.herokuapp.com'],
             credentials: true,
         }));
         // app.use(cors())
