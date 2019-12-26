@@ -75,6 +75,22 @@ postRouter.get('/get', async (req, res) => {
     } catch (error) {
         res.status(error.status || 500).end(error.message || "Internal server error");
     }
+}) 
+
+postRouter.get('/get/:transactionHash', async (req, res) => {
+    try {
+        const {transactionHash} = req.params
+        const result = await postModel.findOne({transactionHash: transactionHash})
+        console.log(result)
+        
+        res.status(201).json({
+            success: true,
+            message: 'data ne',
+            data: result
+        })
+    } catch (error) {
+        res.status(error.status || 500).end(error.message || "Internal server error");
+    }
 })
 
 module.exports = postRouter;
